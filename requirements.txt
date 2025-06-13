@@ -1,3 +1,6 @@
+# Python 3.12.6
+# pip version 25.1.1
+
 # FastAPI 및 웹 프레임워크
 fastapi==0.104.1
 uvicorn[standard]==0.24.0
@@ -18,15 +21,18 @@ tiktoken==0.5.2
 
 # 벡터 데이터베이스
 chromadb==0.4.18
-faiss-cpu==1.7.4
+#faiss-cpu==1.7.4
+faiss-cpu==1.8.0
 
 # 임베딩 및 텍스트 처리
 sentence-transformers==2.2.2
 transformers==4.36.2
-torch==2.1.2
+#torch==2.1.2
+torch==2.2.0
 
 # 데이터 처리
-numpy==1.24.4
+#numpy==1.24.4
+numpy==1.26.4
 pandas==2.1.4
 
 # 환경 변수 및 설정
@@ -46,3 +52,7 @@ loguru==0.7.2
 pytest==7.4.3
 pytest-asyncio==0.21.1
 httpx==0.25.2 
+
+# pdf
+pdfplumber==0.10.0
+PyPDF2==3.0.1
