@@ -1,5 +1,6 @@
 // components/ChatInterface.tsx
 import React, { useState, useEffect, useRef } from 'react';
+import DocumentViewer from './DocumentViewer';
 
 interface Message {
   id: string;
@@ -134,7 +135,7 @@ export default function ChatInterface() {
           >
             <div className="chat-content">{msg.content}</div>
 
-            {msg.sources && msg.sources.length > 0 && (
+            {/* {msg.sources && msg.sources.length > 0 && (
               <ul className="chat-sources">
                 {msg.sources.map((src, idx) => {
                   const text = typeof src === 'string' ? src : src.chunk || src.page_content || '';
@@ -153,6 +154,9 @@ export default function ChatInterface() {
                   );
                 })}
               </ul>
+            )} */}
+            {msg.type === 'assistant' && msg.sources && msg.sources.length > 0 && (
+              <DocumentViewer sources={msg.sources} />
             )}
           </div>
         ))}
