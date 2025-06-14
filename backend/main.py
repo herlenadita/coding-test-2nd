@@ -168,6 +168,28 @@ async def reset_uploaded_documents():
     uploaded_documents.clear()
     return {"message": "All uploaded document metadata has been cleared."}
 
+@app.post("/api/reset_vector_store")
+async def reset_vector_store():
+    """Delete local Chroma vector store and clear in-memory documents."""
+    from shutil import rmtree
+
+    try:
+        if os.path.exists(settings.vector_db_path):
+            rmtree(settings.vector_db_path)
+            logger.info(f"Deleted Chroma vector store at {settings.vector_db_path}")
+        else:
+            logger.info("Chroma vector store not found.")
+
+        # Clear in-memory documents
+        uploaded_documents.clear()
+        document_chunks.clear()
+
+        return {"message": "Chroma vector store and memory cleared."}
+    except Exception as e:
+        logger.error(f"Failed to reset vector store: {e}")
+        raise HTTPException(status_code=500, detail="Failed to reset vector store.")
+
+
 # Run FastAPI app with Uvicorn if executed directly
 if __name__ == "__main__":
     import uvicorn
