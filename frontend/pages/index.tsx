@@ -4,11 +4,11 @@ import FileUpload from '@/components/FileUpload';
 import ChatInterface from '@/components/ChatInterface';
 
 export default function Home() {
-  const [documentId, setDocumentId] = useState<string | null>(null);
+  // const [documentId, setDocumentId] = useState<string | null>(null);
 
-  const handleUploadComplete = (result: any) => {
-    setDocumentId(result.documentId); // Assume backend returns a document ID
-  };
+  // const handleUploadComplete = (result: any) => {
+  //   setDocumentId(result.documentId); // Assume backend returns a document ID
+  // };
 
   return (
     <div>
@@ -27,7 +27,7 @@ export default function Home() {
         <h1>RAG-based Financial Statement Q&A System</h1>
         <p>Upload a financial statement PDF and start asking questions.</p>
 
-        <FileUpload
+        {/* <FileUpload
           onUploadComplete={(res) => {
             console.log('Uploaded:', res);
             setDocumentId(res.filename); // or res.documentId depending on backend
@@ -35,7 +35,8 @@ export default function Home() {
           onUploadError={(msg) => alert(`Upload error: ${msg}`)}
         />
 
-        {documentId && <ChatInterface documentId={documentId} />}
+        {documentId && <ChatInterface documentId={documentId} />} */}
+        <ChatInterface documentId="" />
 
       </main>
     </div>
