@@ -65,8 +65,8 @@ async def upload_pdf(file: UploadFile = File(...)):
         raise HTTPException(status_code=400, detail="Only PDF files are supported.")
     
     # 1.1 Check for duplicate upload by filename
-    if any(doc.filename == file.filename for doc in uploaded_documents):
-        raise HTTPException(status_code=409, detail="This file has already been uploaded.")
+    # if any(doc.filename == file.filename for doc in uploaded_documents):
+    #     raise HTTPException(status_code=409, detail="This file has already been uploaded.")
 
 
     # 2. Save uploaded file to configured path
