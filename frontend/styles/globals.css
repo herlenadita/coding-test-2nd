@@ -1,3 +1,5 @@
+/* === Chat Interface Styles === */
+
 html,
 body {
   padding: 0;
@@ -46,7 +48,7 @@ a {
 
 /* Chat Container */
 .chat-container {
-  max-width: 700px;
+  max-width: 80%;
   margin: 20px auto;
   padding: 16px;
   border: 1px solid #ddd;
@@ -200,6 +202,27 @@ a {
   font-size: 0.9rem;
   color: #333;
 }
+
+.chat-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.main-title {
+  font-size: 2rem;
+  margin-bottom: 0.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.main-subtitle {
+  font-size: 1rem;
+  color: #555;
+  margin: 0 auto;
+}
+
 
 /* Reset Button */
 .reset-button:hover {

@@ -1,3 +1,4 @@
+// components/ChatInterface.tsx
 import React, { useState, useEffect, useRef } from 'react';
 
 interface Message {
@@ -12,7 +13,7 @@ export default function ChatInterface() {
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [uploadedFileName, setUploadedFileName] = useState<string | null>(null);
-  const [documentId, setDocumentId] = useState<string>(''); // NEW
+  const [documentId, setDocumentId] = useState<string>('');
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -38,7 +39,7 @@ export default function ChatInterface() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           question: userMessage.content,
-          documentId, // send documentId from uploaded file
+          documentId,
           chatHistory: [],
         }),
       });
@@ -101,8 +102,6 @@ export default function ChatInterface() {
       if (!res.ok) throw new Error(data.error || 'Upload failed');
 
       setUploadedFileName(data.filename || file.name);
-
-      // 🆕 Simpan documentId dari response backend
       if (data.documentId) {
         setDocumentId(data.documentId);
       }
@@ -172,9 +171,13 @@ export default function ChatInterface() {
           onChange={handleInputChange}
           onKeyDown={handleKeyDown}
           placeholder="Ask a question or upload a PDF..."
-          className="chat-input"
+          className="chat-input wide"
         />
-        <button onClick={handleSendMessage} className="chat-send-button" disabled={isLoading}>
+        <button
+          onClick={handleSendMessage}
+          className="chat-send-button"
+          disabled={isLoading}
+        >
           Send
         </button>
       </div>
