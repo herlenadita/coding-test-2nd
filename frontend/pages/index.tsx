@@ -1,44 +1,32 @@
-import React, { useState } from 'react';
+// pages/index.tsx
 import Head from 'next/head';
-import FileUpload from '@/components/FileUpload';
-import ChatInterface from '@/components/ChatInterface';
+import ChatInterface from '@/components/ChatInterface'; // Pastikan path sesuai struktur proyek
+import Image from 'next/image'
 
 export default function Home() {
-  // const [documentId, setDocumentId] = useState<string | null>(null);
-
-  // const handleUploadComplete = (result: any) => {
-  //   setDocumentId(result.documentId); // Assume backend returns a document ID
-  // };
-
   return (
-    <div>
+    <div className="chat-wrapper">
       <Head>
-        <title>RAG-based Financial Q&A System</title>
-        <meta name="description" content="AI-powered Q&A system for financial documents" />
+        <title>RAG Q&A</title>
       </Head>
       {/* TODO: Implement your components here */}
-        {/* 
-          Suggested components to implement:
-          - FileUpload component for PDF upload
-          - ChatInterface component for Q&A
-          - DocumentViewer component for document display
-        */}
-      <main>
-        <h1>RAG-based Financial Statement Q&A System</h1>
-        <p>Upload a financial statement PDF and start asking questions.</p>
+      {/* 
+        Suggested components to implement:
+        - FileUpload component for PDF upload
+        - ChatInterface component for Q&A
+        - DocumentViewer component for document display
+      */}
+      <header className="chat-header">
+        <h1 className="main-title">
+          <img src="/images/logo.png" alt="logo" height={40} />
+          RAG-based Financial Statement Q&A System
+        </h1>
+        <p className="main-subtitle">
+          Upload a financial statement PDF and start asking questions.
+        </p>
+      </header>
 
-        {/* <FileUpload
-          onUploadComplete={(res) => {
-            console.log('Uploaded:', res);
-            setDocumentId(res.filename); // or res.documentId depending on backend
-          }}
-          onUploadError={(msg) => alert(`Upload error: ${msg}`)}
-        />
-
-        {documentId && <ChatInterface documentId={documentId} />} */}
-        <ChatInterface documentId="" />
-
-      </main>
+      <ChatInterface />
     </div>
   );
 }
