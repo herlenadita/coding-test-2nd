@@ -35,6 +35,8 @@ export default function Home() {
           onUploadError={(msg) => alert(`Upload error: ${msg}`)}
         />
 
+        {documentId && <ChatInterface documentId={documentId} />}
+
       </main>
     </div>
   );
