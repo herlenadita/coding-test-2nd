@@ -223,6 +223,13 @@ a {
   margin: 0 auto;
 }
 
+.document-viewer {
+  margin-top: 20px;
+  border-top: 1px solid #ccc;
+  padding-top: 12px;
+}
+
+
 
 /* Reset Button */
 .reset-button:hover {

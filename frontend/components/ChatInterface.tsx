@@ -1,5 +1,6 @@
 // components/ChatInterface.tsx
 import React, { useState, useEffect, useRef } from 'react';
+//import DocumentViewer from './DocumentViewer';
 
 interface Message {
   id: string;
@@ -154,6 +155,11 @@ export default function ChatInterface() {
                 })}
               </ul>
             )}
+            {/* {msg.type === 'assistant' && msg.sources && msg.sources.length > 0 && (
+              <DocumentViewer
+                sources={messages[messages.length - 1].sources!}
+              />
+            )} */}
           </div>
         ))}
         {isLoading && <p className="chat-loading">Loading...</p>}
