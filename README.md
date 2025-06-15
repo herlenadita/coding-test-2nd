@@ -118,6 +118,9 @@ coding-test-2nd/
 │   ├── requirements.txt     # Python dependencies
 │   └── config.py           # Configuration file
 ├── frontend/
+│   ├── public/             # public files
+│   │   ├── images/         # images files
+│   │   └── logo.png        # logo image
 │   ├── pages/              # Next.js pages
 │   │   ├── index.tsx       # Main page
 │   │   └── _app.tsx        # App component
@@ -146,9 +149,9 @@ coding-test-2nd/
 git clone <your-repository-url>
 cd coding-test-2nd
 
-# Set up Python virtual environment (recommended)
-python -m venv venv
-source venv/bin/activate  # Windows: venv\Scripts\activate
+# Set up Python virtual environment (recommended, make sure to use python v3.10.11 and pip v25.1.1)
+python -m venv venv310
+source venv310/bin/activate  # Windows: venv310\Scripts\activate
 ```
 
 ### 2. **Backend Setup**
