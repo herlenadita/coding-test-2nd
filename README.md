@@ -265,7 +265,7 @@ Retrieve processed document information
 </div>
 
 <div align="center">
-  <img src="testing/images/be/4_api_chatrevenue.png" alt="ChatRevenue" >
+  <img src="testing/images/be/4_api_chat_revenue.png" alt="ChatRevenue" >
   <p><em>Chatrevenue.</em></p>
 </div>
 
@@ -282,8 +282,8 @@ Retrieve processed document information
 </div>
 
 <div align="center">
-  <img src="testing/images/fe/2_chat_revenue_inreportpdf.png" alt="Check Chat Revenue" >
-  <p><em>Ccheck Chat Revenue In PDF Report.</em></p>
+  <img src="testing/images/fe/3_chat_revenue_inreportpdf.png" alt="Check Chat Revenue" >
+  <p><em>Check Chat Revenue In PDF Report.</em></p>
 </div>
 
 ---
