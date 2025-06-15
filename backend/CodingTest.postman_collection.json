@@ -55,7 +55,7 @@
 						{
 							"key": "file",
 							"type": "file",
-							"src": "/D:/Doc/Profile/Doc/InterOpera/forked/coding-test-2nd/data/sample2.pdf"
+							"src": "/D:/Doc/Profile/Doc/InterOpera/forked/coding-test-2nd/data/sample.pdf"
 						}
 					]
 				},
@@ -85,7 +85,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"question\": \"Apa isi laporan keuangan sample3.pdf?\",\r\n  \"chat_history\": []\r\n}\r\n",
+					"raw": "{\r\n  \"question\": \"What is the total revenue for 2025??\",\r\n  \"chat_history\": []\r\n}\r\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -128,7 +128,7 @@
 				"auth": {
 					"type": "noauth"
 				},
-				"method": "GET",
+				"method": "POST",
 				"header": [],
 				"url": "http://localhost:8000/api/reset_vector_store"
 			},

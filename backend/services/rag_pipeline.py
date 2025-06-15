@@ -18,14 +18,14 @@ class RAGPipeline:
         self.prompt_template = PromptTemplate(
             input_variables=["context", "question"],
             template="""
-Anda adalah asisten cerdas yang membantu menjawab pertanyaan berdasarkan dokumen berikut:
-Dokumen:
+You are a smart assistant that helps answer questions based on the following document:
+Document:
 {context}
 
-Pertanyaan:
+Question:
 {question}
 
-Jawaban lengkap dan jelas:
+Complete and clear answer:
 """
         )
 
@@ -86,5 +86,5 @@ Jawaban lengkap dan jelas:
             return response.strip()
         except Exception as e:
             logger.error(f"LLM response generation failed: {e}")
-            return "Maaf, terjadi kesalahan saat menghasilkan jawaban."
+            return "Sorry, there was an error while generating the answer."
 

@@ -245,6 +245,48 @@ Retrieve processed document information
 ```
 
 ---
+## Result
+
+### 1. **Backend**
+
+<div align="center">
+  <img src="testing/images/be/1_serviceup.png" alt="Service is up" >
+  <p><em>Service is up.</em></p>
+</div>
+
+<div align="center">
+  <img src="testing/images/be/2_api_upload.png" alt="API Upload" >
+  <p><em>API Upload.</em></p>
+</div>
+
+<div align="center">
+  <img src="testing/images/be/3_api_getdocuments.png" alt="GetDocuments" >
+  <p><em>Getdocuments.</em></p>
+</div>
+
+<div align="center">
+  <img src="testing/images/be/4_api_chat_revenue.png" alt="ChatRevenue" >
+  <p><em>Chatrevenue.</em></p>
+</div>
+
+### 2. **Frontend**
+
+<div align="center">
+  <img src="testing/images/fe/1_ui.png" alt="UI" >
+  <p><em>UI.</em></p>
+</div>
+
+<div align="center">
+  <img src="testing/images/fe/2_chat_revenue.png" alt="Chat Revenue" >
+  <p><em>Chat Revenue.</em></p>
+</div>
+
+<div align="center">
+  <img src="testing/images/fe/3_chat_revenue_inreportpdf.png" alt="Check Chat Revenue" >
+  <p><em>Check Chat Revenue In PDF Report.</em></p>
+</div>
+
+---
 
 ## Evaluation Criteria
 
