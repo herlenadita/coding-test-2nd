@@ -279,7 +279,7 @@ Retrieve processed document information
 </div>
 
 <div align="center">
-  <img src="testing/images/fe/2_chat_revenue_inreportpdf.png" alt="Check Chat Revenue" >
+  <img src="testing/images/fe/2_chat_inreportpdf.png" alt="Check Chat Revenue" >
   <p><em>Ccheck Chat Revenue In PDF Report.</em></p>
 </div>
 
