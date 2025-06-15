@@ -245,7 +245,11 @@ Retrieve processed document information
 ## Result
 
 ### 1. **Backend**
-![Serivce_is_up](testing/images/be/1_serviceup.png)
+
+<div align="center">
+  <img src="testing/images/be/1_serviceup.png" alt="Service is up" >
+  <p><em>Caption: This is the description of the image.</em></p>
+</div>
 
 
 ### 2. **Frontend**
