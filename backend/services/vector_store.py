@@ -2,30 +2,33 @@ from typing import List, Tuple
 from langchain.schema import Document
 from chromadb import Client
 from chromadb.config import Settings
-from config import settings
-from openai import OpenAI
+from sentence_transformers import SentenceTransformer
 import logging
+import uuid
 
 logger = logging.getLogger(__name__)
 
 class VectorStoreService:
     def __init__(self):
-        # Initialize vector store with REST client
-        self.client = Client(Settings())  # Ini cukup
-
+        # Initialize vector store and local embedding model
+        self.client = Client(Settings())
         self.collection = self.client.get_or_create_collection("documents")
-        self.openai_client = OpenAI(api_key=settings.openai_api_key)
+        
+        # Use a local transformer model for embeddings
+        self.embedding_model = SentenceTransformer("all-MiniLM-L6-v2")
+        logger.info("Initialized VectorStoreService with local sentence-transformers model.")
 
     def add_documents(self, documents: List[Document]) -> None:
         """Add documents to the vector store"""
         try:
-            embeddings = [self._generate_embedding(doc.page_content) for doc in documents]
-            import uuid
+            texts = [doc.page_content for doc in documents]
+            metadatas = [doc.metadata for doc in documents]
+            embeddings = self._generate_embedding_batch(texts)
 
             self.collection.add(
                 ids=[str(uuid.uuid4()) for _ in documents],
-                documents=[doc.page_content for doc in documents],
-                metadatas=[doc.metadata for doc in documents],
+                documents=texts,
+                metadatas=metadatas,
                 embeddings=embeddings
             )
 
@@ -74,13 +77,17 @@ class VectorStoreService:
             raise
 
     def _generate_embedding(self, text: str) -> List[float]:
-        """Generate embeddings for the given text using OpenAI"""
+        """Generate a single embedding using local model"""
         try:
-            response = self.openai_client.embeddings.create(
-                input=text,
-                model=settings.embedding_model
-            )
-            return response.data[0].embedding
+            return self.embedding_model.encode(text).tolist()
         except Exception as e:
             logger.error(f"Embedding generation failed: {e}")
+            raise
+
+    def _generate_embedding_batch(self, texts: List[str]) -> List[List[float]]:
+        """Generate embeddings for a batch of texts using local model"""
+        try:
+            return self.embedding_model.encode(texts, convert_to_numpy=True).tolist()
+        except Exception as e:
+            logger.error(f"Batch embedding generation failed: {e}")
             raise
