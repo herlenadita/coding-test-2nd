@@ -242,6 +242,16 @@ Retrieve processed document information
 ```
 
 ---
+## Result
+
+### 1. **Backend**
+![Serivce_is_up](testing/images/be/)
+
+
+### 2. **Frontend**
+
+
+---
 
 ## Evaluation Criteria
 
